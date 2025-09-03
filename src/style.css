@@ -1,4 +1,13 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-}
+@import 'tailwindcss';
 
+@theme {
+  /* 🎨 Цвета */
+  --color-primary: #1e40af;
+  --color-secondary: #9333ea;
+  --color-accent: #f59e0b;
+  --color-dark: #0f172a;
+
+  /* 🔤 Шрифты */
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+}
