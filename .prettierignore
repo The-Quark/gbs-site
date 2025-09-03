@@ -1,0 +1,22 @@
+# node
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# build output
+dist
+build
+coverage
+
+# env/config
+.env
+*.local
+
+# WordPress
+wp-admin
+wp-includes
+*.php
+
+# misc
+.DS_Store
