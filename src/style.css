@@ -1,13 +1,25 @@
 @import 'tailwindcss';
 
-@theme {
-  /* 🎨 Цвета */
-  --color-primary: #1e40af;
-  --color-secondary: #9333ea;
-  --color-accent: #f59e0b;
-  --color-dark: #0f172a;
+@font-face {
+  font-family: 'TT Supermolot Neue';
+  src: url('/src/assets/fonts/TT-Supermolot-Neue-Trial-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-  /* 🔤 Шрифты */
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Poppins', sans-serif;
+@theme {
+  /* Classic */
+  --color-primary: #02f7eb;
+
+  /* Font */
+  --color-white: #ffffff;
+  --color-black: #03042c;
+  --color-gray: #bababa;
+  --color-subtitle: #cccccc;
+}
+
+body {
+  font-family: 'TT Supermolot Neue', sans-serif;
+  background-color: var(--color-black);
 }
