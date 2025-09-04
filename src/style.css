@@ -16,6 +16,9 @@
   --color-primary: #02f7eb;
   --color-primary_hover: #02d9cf;
 
+  --color-whatsapp: #25d366;
+  --color-whatsapp_hover: #25d366;
+
   /* Font */
   --color-white: #ffffff;
   --color-black: #03042c;
@@ -57,6 +60,9 @@ body {
 
 .button {
   display: inline-block;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
   padding: 10px 20px;
   background-color: var(--color-primary);
   color: var(--color-black);
@@ -69,4 +75,11 @@ body {
 }
 .button:hover {
   background-color: var(--color-primary_hover);
+}
+
+.button--whatsapp {
+  background-color: var(--color-whatsapp);
+}
+.button--whatsapp:hover {
+  background-color: var(--color-whatsapp_hover);
 }
