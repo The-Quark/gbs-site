@@ -15,16 +15,47 @@
       RU
     </p>
   </button>
-  <div id="lang-menu" class="absolute right-0 mt-2 hidden w-28 rounded-md bg-black shadow-lg">
-    <ul class="flex flex-col text-white">
+  <div
+    id="lang-menu"
+    class="backdrop-blur-8 absolute right-0 mt-2 hidden w-56 rounded-md border"
+    style="border-color: rgba(255, 255, 255, 0.2); background-color: rgba(63, 63, 63, 0.25)"
+  >
+    <ul class="flex flex-col gap-4 px-4 py-3">
       <li>
-        <button class="hover:bg-primary w-full px-4 py-2 text-left hover:text-black">RU</button>
+        <button
+          class="group flex w-full items-center justify-between gap-8 text-lg leading-7 transition-colors duration-300"
+        >
+          <span class="group-hover:text-primary">Қазақша</span>
+          <span
+            class="font-bold text-white/20 transition-colors duration-300 group-hover:text-white"
+          >
+            KZ
+          </span>
+        </button>
       </li>
       <li>
-        <button class="hover:bg-primary w-full px-4 py-2 text-left hover:text-black">EN</button>
+        <button
+          class="group flex w-full items-center justify-between gap-8 text-lg leading-7 transition-colors duration-300"
+        >
+          <span class="group-hover:text-primary font-bold">Русский</span>
+          <span
+            class="font-bold text-white/20 transition-colors duration-300 group-hover:text-white"
+          >
+            RU
+          </span>
+        </button>
       </li>
       <li>
-        <button class="hover:bg-primary w-full px-4 py-2 text-left hover:text-black">KZ</button>
+        <button
+          class="group flex w-full items-center justify-between gap-8 text-lg leading-7 transition-colors duration-300"
+        >
+          <span class="group-hover:text-primary">English</span>
+          <span
+            class="font-bold text-white/20 transition-colors duration-300 group-hover:text-white"
+          >
+            EN
+          </span>
+        </button>
       </li>
     </ul>
   </div>
