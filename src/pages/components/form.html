@@ -1,0 +1,56 @@
+<section class="grid grid-cols-2 gap-32 py-24" aria-labelledby="questions-form-title">
+  <div>
+    <h2 id="form-title" class="text-h2 leading-h2 font-semibold">Остались вопросы?</h2>
+    <p id="form-title-p" class="leading-lg text-white_gray mt-4 text-lg font-medium">
+      Заполните форму — мы свяжемся с вами и подберём оптимальное <br />
+      оборудование и системы связи под ваши задачи.
+    </p>
+  </div>
+  <form action="/submit" method="post" class="flex w-md flex-col gap-2">
+    <div>
+      <input type="text" id="name" name="name" required class="input" placeholder="Имя" />
+    </div>
+    <div>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        pattern="\+?[0-9\s\-]{7,15}"
+        class="input"
+        placeholder="Телефон"
+      />
+    </div>
+    <div>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="input"
+        placeholder="Электронная почта"
+      />
+    </div>
+    <div>
+      <textarea
+        id="notes"
+        name="notes"
+        rows="4"
+        class="input h-min-[144px] resize-none"
+        placeholder="Ваши пожелание или вопросы"
+      ></textarea>
+    </div>
+    <div class="flex items-center">
+      <input type="checkbox" id="privacy" name="privacy" required class="checkbox" />
+      <label for="privacy" class="text-white_gray ml-2 text-sm">
+        Согласен с
+        <a href="/src/pages/privacy.html" class="hover:text-primary text-sm underline"
+          >политикой конфиденциальности</a
+        >
+      </label>
+    </div>
+    <div>
+      <button type="submit" class="button mt-2 w-full">Отправить</button>
+    </div>
+  </form>
+</section>
