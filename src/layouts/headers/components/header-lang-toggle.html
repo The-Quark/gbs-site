@@ -1,5 +1,11 @@
-<div class="relative">
-  <button id="lang-toggle" class="group flex items-center justify-center gap-1">
+<div class="relative" data-lang-root>
+  <button
+    type="button"
+    data-lang-toggle
+    aria-haspopup="true"
+    aria-expanded="false"
+    class="group flex items-center justify-center gap-1"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 18 18"
@@ -16,8 +22,8 @@
     </p>
   </button>
   <div
-    id="lang-menu"
-    class="absolute right-0 mt-2 hidden w-56 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] backdrop-blur-md"
+    data-lang-menu
+    class="absolute right-0 z-50 mt-2 hidden w-56 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] backdrop-blur-xs"
   >
     <ul class="flex flex-col gap-4 px-4 py-3">
       <li>
