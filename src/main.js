@@ -82,3 +82,20 @@ window.addEventListener('scroll', toggleHeaders);
 
   mo.observe(document.body, { childList: true, subtree: true });
 })();
+
+(function () {
+  const faqs = document.querySelectorAll('.faq-item');
+
+  faqs.forEach((item) => {
+    const btn = item.querySelector('button');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.icon');
+
+    btn.addEventListener('click', () => {
+      const isOpen = !answer.classList.contains('hidden');
+
+      answer.classList.toggle('hidden', isOpen);
+      icon.textContent = isOpen ? '+' : '–';
+    });
+  });
+})();
