@@ -33,20 +33,21 @@
     <div class="h-full w-0 border-l-2 border-dashed border-white/20"></div>
   </div>
   <div class="mt-10">
-    <div class="grid grid-cols-17 gap-y-10">
+    <!--Introduction-->
+    <div class="grid grid-cols-17 gap-y-10" data-slider data-id="introduction">
       <div class="col-span-8"></div>
       <div class="col-span-1 flex items-center justify-center">
         <div class="bg-white_gray h-[10px] w-[10px] rounded-full"></div>
       </div>
       <div
-        id="years-container"
-        class="text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium"
+        data-years
+        class="years text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium"
       >
-        <h3 class="text-h3 leading-h3" data-year="2010">2010</h3>
+        <h3 class="text-h3 leading-h3 cursor-pointer" data-year="2010">2010</h3>
         <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
-        <h3 data-year="2011">2011</h3>
+        <h3 class="cursor-pointer" data-year="2011">2011</h3>
         <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
-        <h3 data-year="2012">2012</h3>
+        <h3 class="cursor-pointer" data-year="2012">2012</h3>
       </div>
       <div class="col-span-8"></div>
       <div class="col-span-1 flex h-full w-full items-center justify-center">
@@ -54,29 +55,302 @@
       </div>
       <div class="col-span-8 my-5 flex flex-col items-center justify-center">
         <div class="flex items-center justify-between gap-2.5">
-          <img src="/src/assets/img/icon/arrow.svg" alt="Left Arrow" class="h-[44px] w-[21px]" />
           <img
-            id="slider-image"
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Left Arrow"
+            class="h-[44px] w-[21px] cursor-pointer"
+            data-left
+          />
+          <img
             src="/src/assets/img/pict/company-intro.jpg"
             alt="Arrow"
             class="h-[320px] w-[556px] rounded-2xl"
+            data-image
           />
           <img
             src="/src/assets/img/icon/arrow.svg"
             alt="Right Arrow"
-            class="h-[44px] w-[21px] rotate-180"
+            class="h-[44px] w-[21px] rotate-180 cursor-pointer"
+            data-right
           />
         </div>
         <div class="mt-10 flex items-center justify-center">
           <div class="w-[556px]">
-            <h4 id="slider-title" class="text-h3 leading-h3 font-medium">Основание компании</h4>
-            <p id="slider-description" class="text-tp leading-lg text-white_gray">
+            <h4 data-title class="text-h3 leading-h3 font-medium">Основание компании</h4>
+            <p data-description class="text-tp leading-lg text-white_gray mt-4">
               Компания начала деятельность в сфере поставок телекоммуникационного оборудования.
               Сделан первый шаг к созданию собственной сети партнёров и поставщиков.
             </p>
           </div>
         </div>
       </div>
+    </div>
+    <!--Start-->
+    <div class="mt-10 grid grid-cols-17 gap-y-10" data-slider data-id="start">
+      <div
+        data-years
+        class="years text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium"
+      >
+        <h3 class="text-h3 leading-h3 cursor-pointer" data-year="2013">2013</h3>
+        <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
+        <h3 class="cursor-pointer" data-year="2014">2014</h3>
+        <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
+        <h3 class="cursor-pointer" data-year="2015">2015</h3>
+      </div>
+      <div class="col-span-1 flex items-center justify-center">
+        <div class="bg-white_gray h-[10px] w-[10px] rounded-full"></div>
+      </div>
+      <div class="col-span-8"></div>
+      <div class="col-span-8 my-5 flex flex-col items-center justify-center">
+        <div class="flex items-center justify-between gap-2.5">
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Left Arrow"
+            class="h-[44px] w-[21px] cursor-pointer"
+            data-left
+          />
+          <img
+            src="/src/assets/img/pict/company-intro.jpg"
+            alt="Arrow"
+            class="h-[320px] w-[556px] rounded-2xl"
+            data-image
+          />
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Right Arrow"
+            class="h-[44px] w-[21px] rotate-180 cursor-pointer"
+            data-right
+          />
+        </div>
+        <div class="mt-10 flex items-center justify-center">
+          <div class="w-[556px]">
+            <h4 data-title class="text-h3 leading-h3 font-medium">Основание и первые успехи</h4>
+            <p data-description class="text-tp leading-lg text-white_gray mt-4">
+              Компания начала деятельность в сфере поставок телекоммуникационного оборудования,
+              быстро закрепила позиции на локальном рынке и заключила первые международные
+              контракты. Был сформирован складской комплекс и налажены базовые логистические
+              процессы.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-1 flex h-full w-full items-center justify-center">
+        <div class="h-full w-0 border-l-2 border-dashed border-white/20"></div>
+      </div>
+      <div class="col-span-8"></div>
+    </div>
+    <!--Service-->
+    <div class="mt-10 grid grid-cols-17 gap-y-10" data-slider data-id="service">
+      <div class="col-span-8"></div>
+      <div class="col-span-1 flex items-center justify-center">
+        <div class="bg-white_gray h-[10px] w-[10px] rounded-full"></div>
+      </div>
+      <div
+        data-years
+        class="years text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium"
+      >
+        <h3 class="text-h3 leading-h3 cursor-pointer" data-year="2016">2016</h3>
+        <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
+        <h3 class="cursor-pointer" data-year="2017">2017</h3>
+      </div>
+      <div class="col-span-8"></div>
+      <div class="col-span-1 flex h-full w-full items-center justify-center">
+        <div class="h-full w-0 border-l-2 border-dashed border-white/20"></div>
+      </div>
+      <div class="col-span-8 my-5 flex flex-col items-center justify-center">
+        <div class="flex items-center justify-between gap-2.5">
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Left Arrow"
+            class="h-[44px] w-[21px] cursor-pointer"
+            data-left
+          />
+          <img
+            src="/src/assets/img/pict/call-service.jpg"
+            alt="Arrow"
+            class="h-[320px] w-[556px] rounded-2xl"
+            data-image
+          />
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Right Arrow"
+            class="h-[44px] w-[21px] rotate-180 cursor-pointer"
+            data-right
+          />
+        </div>
+        <div class="mt-10 flex items-center justify-center">
+          <div class="w-[556px]">
+            <h4 data-title class="text-h3 leading-h3 font-medium">
+              Развитие сервисных направлений
+            </h4>
+            <p data-description class="text-tp leading-lg text-white_gray mt-4">
+              Открыт собственный сервисный центр, внедрены программы постгарантийного обслуживания.
+              Начаты поставки оборудования в Азию, сформирован отдел проектных решений для
+              корпоративных клиентов.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Middle-->
+    <div class="mt-10 grid grid-cols-17 gap-y-10" data-slider data-id="middle">
+      <div
+        data-years
+        class="years text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium"
+      >
+        <h3 class="text-h3 leading-h3 cursor-pointer" data-year="2018">2018</h3>
+        <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
+        <h3 class="cursor-pointer" data-year="2019">2019</h3>
+        <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
+        <h3 class="cursor-pointer" data-year="2020">2020</h3>
+      </div>
+      <div class="col-span-1 flex items-center justify-center">
+        <div class="bg-white_gray h-[10px] w-[10px] rounded-full"></div>
+      </div>
+      <div class="col-span-8"></div>
+      <div class="col-span-8 my-5 flex flex-col items-center justify-center">
+        <div class="flex items-center justify-between gap-2.5">
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Left Arrow"
+            class="h-[44px] w-[21px] cursor-pointer"
+            data-left
+          />
+          <img
+            src="/src/assets/img/pict/company-intro.jpg"
+            alt="Arrow"
+            class="h-[320px] w-[556px] rounded-2xl"
+            data-image
+          />
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Right Arrow"
+            class="h-[44px] w-[21px] rotate-180 cursor-pointer"
+            data-right
+          />
+        </div>
+        <div class="mt-10 flex items-center justify-center">
+          <div class="w-[556px]">
+            <h4 data-title class="text-h3 leading-h3 font-medium">Основание и первые успехи</h4>
+            <p data-description class="text-tp leading-lg text-white_gray mt-4">
+              Компания начала деятельность в сфере поставок телекоммуникационного оборудования,
+              быстро закрепила позиции на локальном рынке и заключила первые международные
+              контракты. Был сформирован складской комплекс и налажены базовые логистические
+              процессы.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-1 flex h-full w-full items-center justify-center">
+        <div class="h-full w-0 border-l-2 border-dashed border-white/20"></div>
+      </div>
+      <div class="col-span-8"></div>
+    </div>
+    <!--Position-->
+    <div class="mt-10 grid grid-cols-17 gap-y-10" data-slider data-id="position">
+      <div class="col-span-8"></div>
+      <div class="col-span-1 flex items-center justify-center">
+        <div class="bg-white_gray h-[10px] w-[10px] rounded-full"></div>
+      </div>
+      <div
+        data-years
+        class="years text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium"
+      >
+        <h3 class="text-h3 leading-h3 cursor-pointer" data-year="2021">2021</h3>
+        <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
+        <h3 class="cursor-pointer" data-year="2022">2022</h3>
+      </div>
+      <div class="col-span-8"></div>
+      <div class="col-span-1 flex h-full w-full items-center justify-center">
+        <div class="h-full w-0 border-l-2 border-dashed border-white/20"></div>
+      </div>
+      <div class="col-span-8 my-5 flex flex-col items-center justify-center">
+        <div class="flex items-center justify-between gap-2.5">
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Left Arrow"
+            class="h-[44px] w-[21px] cursor-pointer"
+            data-left
+          />
+          <img
+            src="/src/assets/img/pict/call-service.jpg"
+            alt="Arrow"
+            class="h-[320px] w-[556px] rounded-2xl"
+            data-image
+          />
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Right Arrow"
+            class="h-[44px] w-[21px] rotate-180 cursor-pointer"
+            data-right
+          />
+        </div>
+        <div class="mt-10 flex items-center justify-center">
+          <div class="w-[556px]">
+            <h4 data-title class="text-h3 leading-h3 font-medium">
+              Укрепление позиций и расширение ассортимента
+            </h4>
+            <p data-description class="text-tp leading-lg text-white_gray mt-4">
+              Расширен каталог оборудования за счёт новых продуктовых линеек, внедрены решения для
+              кибербезопасности и защищённой связи. Увеличен штат инженеров и проектных менеджеров.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Final -->
+    <div class="mt-10 grid grid-cols-17 gap-y-10" data-slider data-id="final">
+      <div
+        data-years
+        class="years text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium"
+      >
+        <h3 class="text-h3 leading-h3 cursor-pointer" data-year="2023">2023</h3>
+        <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
+        <h3 class="cursor-pointer" data-year="2024">2024</h3>
+        <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
+        <h3 class="cursor-pointer" data-year="2025">2025</h3>
+      </div>
+      <div class="col-span-1 flex items-center justify-center">
+        <div class="bg-white_gray h-[10px] w-[10px] rounded-full"></div>
+      </div>
+      <div class="col-span-8"></div>
+      <div class="col-span-8 my-5 flex flex-col items-center justify-center">
+        <div class="flex items-center justify-between gap-2.5">
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Left Arrow"
+            class="h-[44px] w-[21px] cursor-pointer"
+            data-left
+          />
+          <img
+            src="/src/assets/img/pict/company-intro.jpg"
+            alt="Arrow"
+            class="h-[320px] w-[556px] rounded-2xl"
+            data-image
+          />
+          <img
+            src="/src/assets/img/icon/arrow.svg"
+            alt="Right Arrow"
+            class="h-[44px] w-[21px] rotate-180 cursor-pointer"
+            data-right
+          />
+        </div>
+        <div class="mt-10 flex items-center justify-center">
+          <div class="w-[556px]">
+            <h4 data-title class="text-h3 leading-h3 font-medium">Основание и первые успехи</h4>
+            <p data-description class="text-tp leading-lg text-white_gray mt-4">
+              Компания начала деятельность в сфере поставок телекоммуникационного оборудования,
+              быстро закрепила позиции на локальном рынке и заключила первые международные
+              контракты. Был сформирован складской комплекс и налажены базовые логистические
+              процессы.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-1 flex h-full w-full items-center justify-center">
+        <div class="h-full w-0 border-l-2 border-dashed border-white/20"></div>
+      </div>
+      <div class="col-span-8"></div>
     </div>
   </div>
 </section>

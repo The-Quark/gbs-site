@@ -1,53 +1,59 @@
 import { sliderData } from './data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const yearsContainer = document.getElementById('years-container');
-  const imageElement = document.getElementById('slider-image');
-  const titleElement = document.getElementById('slider-title');
-  const descriptionElement = document.getElementById('slider-description');
-  const leftArrow = document.querySelector('img[alt="Left Arrow"]');
-  const rightArrow = document.querySelector('img[alt="Right Arrow"]');
+  document.querySelectorAll('[data-slider]').forEach((slider) => {
+    const sliderId = slider.dataset.id;
+    const data = sliderData[sliderId];
 
-  let currentIndex = 0;
+    if (!data) return;
 
-  function updateSlide(year) {
-    const slide = sliderData.find((item) => item.year === year);
-    if (!slide) return;
+    const yearsContainer = slider.querySelector('[data-years]');
+    const imageElement = slider.querySelector('[data-image]');
+    const titleElement = slider.querySelector('[data-title]');
+    const descriptionElement = slider.querySelector('[data-description]');
+    const leftArrow = slider.querySelector('[data-left]');
+    const rightArrow = slider.querySelector('[data-right]');
 
-    currentIndex = sliderData.findIndex((item) => item.year === year);
+    let currentIndex = 0;
 
-    imageElement.src = slide.image;
-    titleElement.textContent = slide.title;
-    descriptionElement.textContent = slide.description;
+    function updateSlide(year) {
+      const slide = data.find((item) => item.year === year);
+      if (!slide) return;
 
-    // подсветка выбранного года
-    yearsContainer.querySelectorAll('[data-year]').forEach((el) => {
-      el.classList.remove('text-h3', 'leading-h3'); // убираем активный стиль
-      if (parseInt(el.dataset.year, 10) === year) {
-        el.classList.add('text-h3', 'leading-h3'); // добавляем активный стиль
-      }
+      currentIndex = data.findIndex((item) => item.year === year);
+
+      imageElement.src = slide.image;
+      titleElement.textContent = slide.title;
+      descriptionElement.textContent = slide.description;
+
+      yearsContainer.querySelectorAll('[data-year]').forEach((el) => {
+        el.classList.remove('text-h3', 'leading-h3');
+        if (parseInt(el.dataset.year, 10) === year) {
+          el.classList.add('text-h3', 'leading-h3');
+        }
+      });
+    }
+
+    yearsContainer.querySelectorAll('[data-year]').forEach((yearEl) => {
+      yearEl.addEventListener('click', () => {
+        updateSlide(parseInt(yearEl.dataset.year, 10));
+      });
     });
-  }
 
-  // события по клику на год
-  yearsContainer.querySelectorAll('[data-year]').forEach((yearEl) => {
-    yearEl.addEventListener('click', () => {
-      updateSlide(parseInt(yearEl.dataset.year, 10));
-    });
+    if (leftArrow) {
+      leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + data.length) % data.length;
+        updateSlide(data[currentIndex].year);
+      });
+    }
+
+    if (rightArrow) {
+      rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % data.length;
+        updateSlide(data[currentIndex].year);
+      });
+    }
+
+    updateSlide(data[0].year);
   });
-
-  // стрелка влево
-  leftArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + sliderData.length) % sliderData.length;
-    updateSlide(sliderData[currentIndex].year);
-  });
-
-  // стрелка вправо
-  rightArrow.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % sliderData.length;
-    updateSlide(sliderData[currentIndex].year);
-  });
-
-  // дефолт — первый слайд
-  updateSlide(sliderData[0].year);
 });
