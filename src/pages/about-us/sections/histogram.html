@@ -38,12 +38,15 @@
       <div class="col-span-1 flex items-center justify-center">
         <div class="bg-white_gray h-[10px] w-[10px] rounded-full"></div>
       </div>
-      <div class="text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium">
-        <h3 class="text-h3 leading-h3">2010</h3>
+      <div
+        id="years-container"
+        class="text-white_gray col-span-8 flex items-center gap-4 text-lg leading-7 font-medium"
+      >
+        <h3 class="text-h3 leading-h3" data-year="2010">2010</h3>
         <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
-        <h3>2011</h3>
+        <h3 data-year="2011">2011</h3>
         <div class="w-[100px] border-t-2 border-dashed border-white/20"></div>
-        <h3>2012</h3>
+        <h3 data-year="2012">2012</h3>
       </div>
       <div class="col-span-8"></div>
       <div class="col-span-1 flex h-full w-full items-center justify-center">
@@ -53,6 +56,7 @@
         <div class="flex items-center justify-between gap-2.5">
           <img src="/src/assets/img/icon/arrow.svg" alt="Left Arrow" class="h-[44px] w-[21px]" />
           <img
+            id="slider-image"
             src="/src/assets/img/pict/company-intro.jpg"
             alt="Arrow"
             class="h-[320px] w-[556px] rounded-2xl"
@@ -65,8 +69,8 @@
         </div>
         <div class="mt-10 flex items-center justify-center">
           <div class="w-[556px]">
-            <h4 class="text-h3 leading-h3 font-medium">Основание компании</h4>
-            <p class="text-tp leading-lg text-white_gray">
+            <h4 id="slider-title" class="text-h3 leading-h3 font-medium">Основание компании</h4>
+            <p id="slider-description" class="text-tp leading-lg text-white_gray">
               Компания начала деятельность в сфере поставок телекоммуникационного оборудования.
               Сделан первый шаг к созданию собственной сети партнёров и поставщиков.
             </p>
