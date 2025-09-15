@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('[data-logistic-cards]');
   if (!container) return;
 
-  const activeClasses = 'h-[520px] w-[720px]';
-  const inactiveClasses = 'h-[520px] w-[142px]';
+  const activeClasses = 'h-[520px] w-[720px] cursor-default';
+  const inactiveClasses = 'h-[520px] w-[192px] cursor-pointer';
   const activeImgClasses = 'mask-b-from-80%';
   const inactiveImgClasses = 'brightness-75';
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   cards.forEach((card) => {
     const img = card.querySelector('img');
 
-    img.addEventListener('click', () => {
+    card.addEventListener('click', () => {
       // сбросим все карточки
       cards.forEach((c) => {
         c.removeAttribute('active');
@@ -65,14 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const dev = card.querySelector('[dev]');
 
     if (isActive) {
-      if (dev) dev.classList.remove('top-0', 'justify-center', 'items-center', 'w-[142px]');
+      if (dev) dev.classList.remove('top-0', 'justify-center', 'items-center', 'w-[192px]');
       if (dev) dev.classList.add('bottom-0', 'w-[660px]');
       if (h4) h4.classList.remove('[writing-mode:vertical-rl]', 'text-lg');
       if (h4) h4.classList.add('text-h3', 'font-medium');
       if (p) p.classList.remove('hidden');
     } else {
       if (dev) dev.classList.remove('bottom-0', 'w-[660px]');
-      if (dev) dev.classList.add('top-0', 'justify-center', 'items-center', 'w-[142px]');
+      if (dev) dev.classList.add('top-0', 'justify-center', 'items-center', 'w-[192px]');
       if (h4) h4.classList.add('[writing-mode:vertical-rl]', 'text-lg');
       if (h4) h4.classList.remove('text-h3', 'font-medium');
       if (p) p.classList.add('hidden');
