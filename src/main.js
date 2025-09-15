@@ -11,6 +11,17 @@ function toggleHeaders() {
   }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPath = window.location.pathname;
+  const links = document.querySelectorAll("nav[aria-label='Main navigation'] a");
+
+  links.forEach((link) => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('font-bold');
+    }
+  });
+});
+
 window.addEventListener('scroll', toggleHeaders);
 
 (function () {
