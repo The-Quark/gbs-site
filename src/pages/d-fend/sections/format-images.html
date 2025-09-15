@@ -2,30 +2,69 @@
   <h2 id="format-drone-title" class="text-h2 text-gray leading-h3 font-semibold">
     Форматы развертывания
   </h2>
-  <div class="mt-20 flex flex-row gap-2">
-    <img
-      src="/src/assets/img/pict/tactical-deployment.jpg"
-      alt="Tactical Deployment"
-      class="h-[520px] w-[720px] rounded-2xl object-cover"
-      loading="lazy"
-    />
-    <img
-      src="/src/assets/img/pict/backpack-version.png"
-      alt="Backpack Version"
-      class="min-h-[520px] w-[192px] rounded-2xl object-cover"
-      loading="lazy"
-    />
-    <img
-      src="/src/assets/img/pict/deployment-car.png"
-      alt="Deployment in a car"
-      class="min-h-[520px] w-[192px] rounded-2xl object-cover"
-      loading="lazy"
-    />
-    <img
-      src="/src/assets/img/pict/stationary-deployment.jpg"
-      alt="Stationary Deployment"
-      class="min-h-[520px] w-[192px] rounded-2xl object-cover"
-      loading="lazy"
-    />
+  <div class="mt-20 flex flex-row gap-2" data-logistic-cards>
+    <div class="relative" active>
+      <img
+        src="/src/assets/img/pict/tactical-deployment.jpg"
+        alt="Tactical Deployment"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <div class="absolute left-0 flex flex-col gap-4 p-10" dev>
+        <h4 class="text-lg leading-7 font-bold">Тактическое развертывание</h4>
+        <p class="text-base leading-6">
+          Компактное и лёгкое решение с лучшими в классе показателями SWaP. Два кейса Pelican AIR,
+          антенны с прямым подключением, управление через планшет EnforceAir, простая установка и
+          работа одним оператором при минимальном энергопотреблении.
+        </p>
+      </div>
+    </div>
+    <div class="relative" inActive>
+      <img
+        src="/src/assets/img/pict/backpack-version.png"
+        alt="Backpack Version"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <div class="absolute left-0 flex flex-col gap-4 p-10" dev>
+        <h4 class="text-lg leading-7 font-bold">Версия в рюкзаке</h4>
+        <p class="text-base leading-6">
+          Бесшумная и скрытная конструкция со встроенными антеннами для работы в любых условиях.
+          Поддерживает работу на ходу и горячую замену аккумуляторов (до 2,5 часов автономности).
+          Общий вес комплекта — 12 кг, включая два аккумулятора по 1,5 кг.
+        </p>
+      </div>
+    </div>
+    <div class="relative" inActive>
+      <img
+        src="/src/assets/img/pict/deployment-car.png"
+        alt="Deployment in a car"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <div class="absolute left-0 flex flex-col gap-4 p-10" dev>
+        <h4 class="text-lg leading-7 font-bold">Развертывание в автомобиле</h4>
+        <p class="text-base leading-6">
+          Высокоэффективная защита в движении с вертикальным размещением для экономии места и
+          креплением к заднему сиденью через ISO-FIX. Установка без инструментов, магнитные антенны
+          на крыше, управление через планшет и возможность работы от аккумулятора.
+        </p>
+      </div>
+    </div>
+    <div class="relative" inActive>
+      <img
+        src="/src/assets/img/pict/stationary-deployment.jpg"
+        alt="Stationary Deployment"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <div class="absolute left-0 flex flex-col gap-4 p-10" dev>
+        <h4 class="text-lg leading-7 font-bold">Стационарное развертывание</h4>
+        <p class="text-base leading-6">
+          Подача деклараций, сертификация, расчёт пошлин и полное оформление в соответствии с
+          нормативами.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
