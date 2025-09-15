@@ -64,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const p = card.querySelector('p');
 
     if (isActive) {
-      if (h4) h4.classList.remove('rotate-90', 'top-20', 'text-lg');
+      if (h4) h4.classList.remove('[writing-mode:vertical-rl]', 'top-10', 'text-lg');
       if (h4) h4.classList.add('bottom-24', 'left-10', 'text-h3', 'font-medium');
       if (p) p.classList.remove('hidden');
     } else {
-      if (h4) h4.classList.add('rotate-90', 'top-20', 'text-lg');
+      if (h4) h4.classList.add('[writing-mode:vertical-rl]', 'top-10', 'text-lg');
       if (h4) h4.classList.remove('bottom-24', 'left-10', 'text-h3', 'font-medium');
       if (p) p.classList.add('hidden');
     }
