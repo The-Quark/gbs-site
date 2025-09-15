@@ -12,36 +12,74 @@
       и сопровождения поставок.
     </p>
   </div>
-  <div class="flex flex-row gap-2">
-    <img
-      src="/src/assets/img/pict/ship.jpg"
-      alt="Shipping container being loaded onto a cargo ship"
-      class="h-[520px] w-[720px] rounded-2xl object-cover"
-      loading="lazy"
-    />
-    <img
-      src="/src/assets/img/pict/box-checking.jpg"
-      alt="Box being checked in a warehouse"
-      class="min-h-[520px] w-[142px] rounded-2xl object-cover"
-      loading="lazy"
-    />
-    <img
-      src="/src/assets/img/pict/plane.jpg"
-      alt="Plane in airport"
-      class="min-h-[520px] w-[142px] rounded-2xl object-cover"
-      loading="lazy"
-    />
-    <img
-      src="/src/assets/img/pict/woman-computer.jpg"
-      alt="Woman working on a computer"
-      class="min-h-[520px] w-[142px] rounded-2xl object-cover"
-      loading="lazy"
-    />
-    <img
-      src="/src/assets/img/pict/warehouse-man.jpg"
-      alt="Warehouse worker using a tablet"
-      class="min-h-[520px] w-[142px] rounded-2xl object-cover"
-      loading="lazy"
-    />
+  <div class="flex flex-row gap-2" data-logistic-cards>
+    <div class="relative h-[520px] w-[720px]" active>
+      <img
+        src="/src/assets/img/pict/ship.jpg"
+        alt="Shipping container being loaded onto a cargo ship"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <h4 class="absolute top-20 rotate-90 text-lg leading-7 font-bold">Морские перевозки</h4>
+      <p class="absolute bottom-11 left-10 mt-4 text-base leading-6">
+        Международная доставка грузов морским транспортом: контейнерные, генеральные и сборные
+        грузы.
+      </p>
+    </div>
+    <div class="relative h-[520px] w-[142px]" inActive>
+      <img
+        src="/src/assets/img/pict/box-checking.jpg"
+        alt="Box being checked in a warehouse"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <h4 class="absolute top-20 rotate-90 text-lg leading-7 font-bold">Сопровождение грузов</h4>
+      <p class="absolute bottom-11 left-10 mt-4 hidden text-base leading-6">
+        Клиентская поддержка, отслеживание, контроль за маршрутом и отчётность до момента полной
+        доставки.
+      </p>
+    </div>
+    <div class="relative h-[520px] w-[142px]" inActive>
+      <img
+        src="/src/assets/img/pict/plane.jpg"
+        alt="Plane in airport"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <h4 class="absolute top-20 rotate-90 text-lg leading-7 font-bold">Авиаперевозки</h4>
+      <p class="absolute bottom-11 left-10 mt-4 hidden text-base leading-6">
+        Экспресс-доставка: 1 день и срочные поставки воздушным транспортом по глобальной сети
+        направлений.
+      </p>
+    </div>
+    <div class="relative h-[520px] w-[142px]" inActive>
+      <img
+        src="/src/assets/img/pict/woman-computer.jpg"
+        alt="Woman working on a computer"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <h4 class="absolute top-20 rotate-90 text-lg leading-7 font-bold">
+        Таможенное посредничество
+      </h4>
+      <p class="absolute bottom-11 left-10 mt-4 hidden text-base leading-6">
+        Подача деклараций, сертификация, расчёт пошлин и полное оформление в соответствии с
+        нормативами.
+      </p>
+    </div>
+    <div class="relative h-[520px] w-[142px]" inActive>
+      <img
+        src="/src/assets/img/pict/warehouse-man.jpg"
+        alt="Warehouse worker using a tablet"
+        class="h-full cursor-pointer rounded-2xl object-cover transition-all duration-500"
+        loading="lazy"
+      />
+      <h4 class="absolute top-20 rotate-90 text-lg leading-7 font-bold">
+        Управление складом и хранением
+      </h4>
+      <p class="absolute bottom-11 left-10 mt-4 hidden text-base leading-6">
+        Ответственное хранение, кросс-докинг, маркировка и контроль остатков на собственных складах.
+      </p>
+    </div>
   </div>
 </section>
