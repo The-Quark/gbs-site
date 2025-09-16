@@ -33,14 +33,14 @@
   --color-subtitle: #cccccc;
 
   /* Font Size */
-  --text-h1: 5.5rem; /* 88px */
-  --text-h2: 2.75rem; /* 44px */
-  --text-h3: 2rem; /* 32px */
-  --text-tt: 4rem; /* 64px */
-  --text-tp: 1.25rem; /* 20px */
-  --text-lg: 1.125rem; /* 18px */
-  --text-base: 1rem; /* 16px */
-  --text-sm: 0.875rem; /* 14px */
+  --text-h1: 4.5rem; /* 72px */
+  --text-h2: 2.25rem; /* 36px */
+  --text-h3: 1.75rem; /* 28px */
+  --text-tt: 3.5rem; /* 56px */
+  --text-tp: 1.125rem; /* 18px */
+  --text-lg: 1rem; /* 16px */
+  --text-base: 0.875rem; /* 14px */
+  --text-sm: 0.75rem; /* 12px */
 
   /* Font Line */
   --leading-h1: 1.14;
@@ -49,7 +49,7 @@
   --leading-medium: 1.4;
   --leading-lg: 1.5;
   --leading-base: 1.6;
-  --leading-sm: 1.6;
+  --leading-sm: 1.7;
 }
 
 body {
@@ -72,11 +72,17 @@ body {
   .container {
     padding: 0 12px;
   }
-  @theme {
-    --text-h1: 4.5rem; /* 72px */
-    --text-h2: 2.25rem; /* 36px */
-    --text-h3: 1.75rem; /* 28px */
-    --text-tt: 3.5rem; /* 56px */
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  :root {
+    --text-h1: 5rem; /* 80px */
+    --text-h2: 2.5rem; /* 40px */
+    --text-h3: 1.875rem; /* 30px */
+    --text-tt: 3.75rem; /* 60px */
     --text-tp: 1.125rem; /* 18px */
     --text-lg: 1rem; /* 16px */
     --text-base: 0.875rem; /* 14px */
@@ -84,25 +90,19 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 24px;
-  }
-  @theme {
-    --text-h1: 5rem; /* 80px */
-    --text-h2: 2.5rem; /* 40px */
-    --text-h3: 1.875rem; /* 30px */
-    --text-tt: 3.75rem; /* 60px */
-    --text-tp: 1.125rem; /* 18px */
-    --text-lg: 1.0625rem; /* 17px */
-    --text-base: 0.9375rem; /* 15px */
-    --text-sm: 0.8125rem; /* 13px */
-  }
-}
-
 @media (min-width: 1024px) {
   .container {
     padding: 0 60px;
+  }
+  :root {
+    --text-h1: 5.5rem; /* 88px */
+    --text-h2: 2.75rem; /* 44px */
+    --text-h3: 2rem; /* 32px */
+    --text-tt: 4rem; /* 64px */
+    --text-tp: 1.25rem; /* 20px */
+    --text-lg: 1.125rem; /* 18px */
+    --text-base: 1rem; /* 16px */
+    --text-sm: 0.875rem; /* 14px */
   }
 }
 
