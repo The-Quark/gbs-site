@@ -1,12 +1,17 @@
 <footer class="border-t border-white/20 text-white">
-  <div class="my-10 grid grid-cols-2 items-center gap-8">
-    <div>
+  <div class="my-10 grid grid-cols-4 items-center gap-8 md:grid-cols-2">
+    <div class="col-span-1 hidden md:block">
       <a href="/" aria-label="GBS homepage">
-        <img src="/src/assets/img/big-logo.svg" alt="GBS logo" class="h-[90px] w-auto" />
+        <img
+          src="/src/assets/img/big-logo.svg"
+          alt="GBS logo"
+          class="hidden h-[90px] w-auto md:block"
+        />
+        <img src="/src/assets/img/logo.svg" alt="GBS" class="h-[90px] w-auto md:hidden" />
       </a>
     </div>
 
-    <div class="flex justify-between gap-4">
+    <div class="col-span-4 flex w-full justify-between gap-4 md:col-span-1">
       <nav aria-label="Footer navigation">
         <ul class="flex flex-col gap-4 text-base leading-6 uppercase">
           <li><a href="/index.html" class="hover:text-primary">Главная</a></li>
@@ -21,7 +26,7 @@
         </ul>
       </nav>
 
-      <address class="flex w-80 flex-col gap-5 text-base leading-6">
+      <address class="flex flex-col gap-5 text-base leading-6 md:w-80">
         <p class="font-semibold uppercase">Свяжитесь с нами</p>
         <p>+7 (727) 240-12-65</p>
         <p>office@gbsgroup.kz</p>
