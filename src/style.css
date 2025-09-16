@@ -12,10 +12,16 @@
   /* Container */
   --container-max: 90rem;
 
+  /* Breakpoint */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 90rem;
+
   /* Classic */
   --color-primary: #02f7eb;
   --color-primary_hover: #02d9cf;
-
   --color-whatsapp: #25d366;
   --color-whatsapp_hover: #25d366;
 
@@ -66,15 +72,35 @@ body {
   .container {
     padding: 0 12px;
   }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 24px;
+  @theme {
+    --text-h1: 4.5rem; /* 72px */
+    --text-h2: 2.25rem; /* 36px */
+    --text-h3: 1.75rem; /* 28px */
+    --text-tt: 3.5rem; /* 56px */
+    --text-tp: 1.125rem; /* 18px */
+    --text-lg: 1rem; /* 16px */
+    --text-base: 0.875rem; /* 14px */
+    --text-sm: 0.75rem; /* 12px */
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  @theme {
+    --text-h1: 5rem; /* 80px */
+    --text-h2: 2.5rem; /* 40px */
+    --text-h3: 1.875rem; /* 30px */
+    --text-tt: 3.75rem; /* 60px */
+    --text-tp: 1.125rem; /* 18px */
+    --text-lg: 1.0625rem; /* 17px */
+    --text-base: 0.9375rem; /* 15px */
+    --text-sm: 0.8125rem; /* 13px */
+  }
+}
+
+@media (min-width: 1024px) {
   .container {
     padding: 0 60px;
   }
