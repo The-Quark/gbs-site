@@ -1,11 +1,24 @@
 <header id="main-header" class="top-0 w-full">
-  <div class="flex w-full items-center justify-between py-3 lg:py-5">
+  <div class="flex w-full items-center justify-between gap-4 py-3 lg:py-5">
     <a href="/" aria-label="GBS homepage" class="shrink-0">
-      <img src="/src/assets/img/logo-text.svg" alt="GBS logo with text" class="h-12 w-auto" />
+      <!-- Лого для больших экранов -->
+      <img
+        src="/src/assets/img/logo-text.svg"
+        alt="GBS logo with text"
+        class="hidden h-12 w-auto lg:block"
+      />
+      <!-- Лого для маленьких экранов -->
+      <img src="/src/assets/img/logo.svg" alt="GBS logo" class="block h-8 w-auto lg:hidden" />
     </a>
-    <div class="flex items-center justify-center gap-4">
+    <div class="block flex flex-row items-center justify-center gap-4 lg:hidden">
       <load src="src/layouts/headers/components/header-lang-toggle.html" />
       <load src="src/layouts/headers/components/header-nav-list.html" />
+    </div>
+    <div class="hidden lg:block">
+      <load src="src/layouts/headers/components/header-nav-list.html" />
+    </div>
+    <div class="hidden lg:block">
+      <load src="src/layouts/headers/components/header-lang-toggle.html" />
     </div>
   </div>
 </header>
