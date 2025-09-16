@@ -2,10 +2,9 @@ import './style.css';
 
 const mainHeader = document.getElementById('main-header');
 const stickyHeader = document.getElementById('sticky-header');
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
 
 function toggleHeaders() {
+  if (!mainHeader || !stickyHeader) return;
   if (window.scrollY > mainHeader.offsetHeight) {
     stickyHeader.classList.remove('hidden');
   } else {
@@ -13,26 +12,19 @@ function toggleHeaders() {
   }
 }
 
-menuToggle.addEventListener('click', (e) => {
-  e.stopPropagation();
-  const isMenuHidden = mobileMenu.classList.toggle('hidden');
-  closeAllLangMenus();
-});
+// --- helpers ---
+function closeAllLangMenus() {
+  document.querySelectorAll('[data-lang-menu]').forEach((m) => m.classList.add('hidden'));
+  document
+    .querySelectorAll('[data-lang-toggle]')
+    .forEach((t) => t.setAttribute('aria-expanded', 'false'));
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-  const currentPath = window.location.pathname;
-  const links = document.querySelectorAll("nav[aria-label='Main navigation'] a");
+function closeAllMobileMenus() {
+  document.querySelectorAll('[data-mobile-menu]').forEach((m) => m.classList.add('hidden'));
+}
 
-  links.forEach((link) => {
-    if (link.getAttribute('href') === currentPath) {
-      link.classList.add('font-bold');
-    }
-  });
-});
-
-window.addEventListener('scroll', toggleHeaders);
-
-// Language toggle logic
+// Инициализация языковых переключателей (можно вызывать для части DOM)
 function initLangToggles(root = document) {
   const roots = root.querySelectorAll('[data-lang-root]');
   roots.forEach((r) => {
@@ -48,69 +40,113 @@ function initLangToggles(root = document) {
       e.stopPropagation();
       const isHidden = menu.classList.toggle('hidden');
       toggle.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+
       if (!isHidden) {
-        mobileMenu.classList.add('hidden'); // Close mobile menu when language menu opens
+        // при открытии языкового меню — закрываем все mobile menus (бургер)
+        closeAllMobileMenus();
       }
     });
 
+    // чтобы клик внутри меню не закрывал его
     menu.addEventListener('click', (e) => e.stopPropagation());
   });
 }
 
-function closeAllLangMenus() {
-  document.querySelectorAll('[data-lang-menu]').forEach((m) => {
-    if (!m.classList.contains('hidden')) m.classList.add('hidden');
+// --- main init (выполняется после загрузки DOM) ---
+function init() {
+  // Burger: для каждого toggle ищем своё menu внутри nav
+  document.querySelectorAll('[data-menu-toggle]').forEach((toggle) => {
+    const nav = toggle.closest('nav');
+    const menu = nav && nav.querySelector('[data-mobile-menu]');
+    if (!menu) return;
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = menu.classList.toggle('hidden');
+      // при открытии бургера — закрываем все языковые менюшки
+      if (!isHidden) closeAllLangMenus();
+    });
   });
-  document.querySelectorAll('[data-lang-toggle]').forEach((t) => {
-    t.setAttribute('aria-expanded', 'false');
+
+  // подсветка активной ссылки
+  const currentPath = window.location.pathname;
+  const links = document.querySelectorAll("nav[aria-label='Main navigation'] a");
+  links.forEach((link) => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('font-bold');
+    }
   });
-}
 
-// Close both menus on outside click
-document.addEventListener('click', (e) => {
-  if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-    mobileMenu.classList.add('hidden');
-  }
-  closeAllLangMenus();
-});
-
-// Close both menus on Esc
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    mobileMenu.classList.add('hidden');
-    closeAllLangMenus();
-  }
-});
-
-// Initialize language toggles
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => initLangToggles(document));
-} else {
+  // Инициализируем языковые переключатели по всему документу
   initLangToggles(document);
-}
 
-const mo = new MutationObserver((mutations) => {
-  for (const m of mutations) {
-    for (const node of m.addedNodes) {
-      if (node.nodeType !== 1) continue;
-      if (node.matches('[data-lang-root]') || node.querySelector('[data-lang-root]')) {
-        initLangToggles(node);
+  // Закрытие при клике вне элементов:
+  document.addEventListener('click', (e) => {
+    // mobile menus: если клик вне самого menu и вне соответствующего toggle — закрыть
+    document.querySelectorAll('[data-mobile-menu]').forEach((mm) => {
+      const nav = mm.closest('nav');
+      const toggle = nav && nav.querySelector('[data-menu-toggle]');
+      if (mm && toggle && !mm.contains(e.target) && !toggle.contains(e.target)) {
+        mm.classList.add('hidden');
+      }
+    });
+
+    // lang menus: если клик вне menu и вне соответствующего toggle — закрыть
+    document.querySelectorAll('[data-lang-menu]').forEach((lm) => {
+      const root = lm.closest('[data-lang-root]');
+      const toggle = root && root.querySelector('[data-lang-toggle]');
+      if (lm && toggle && !lm.contains(e.target) && !toggle.contains(e.target)) {
+        lm.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Esc — закрыть всё
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAllMobileMenus();
+      closeAllLangMenus();
+    }
+  });
+
+  // FAQ (как было)
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const btn = item.querySelector('button');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.icon');
+    if (!btn || !answer) return;
+    btn.addEventListener('click', () => {
+      const isOpen = !answer.classList.contains('hidden');
+      answer.classList.toggle('hidden', isOpen);
+      if (icon) icon.textContent = isOpen ? '+' : '–';
+    });
+  });
+
+  // Наблюдатель для динамически добавляемых языковых блоков
+  const mo = new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      for (const node of m.addedNodes) {
+        if (node.nodeType !== 1) continue;
+        if (
+          node.matches &&
+          (node.matches('[data-lang-root]') || node.querySelector('[data-lang-root]'))
+        ) {
+          initLangToggles(node);
+        }
       }
     }
-  }
-});
-
-mo.observe(document.body, { childList: true, subtree: true });
-
-const faqs = document.querySelectorAll('.faq-item');
-faqs.forEach((item) => {
-  const btn = item.querySelector('button');
-  const answer = item.querySelector('.faq-answer');
-  const icon = item.querySelector('.icon');
-
-  btn.addEventListener('click', () => {
-    const isOpen = !answer.classList.contains('hidden');
-    answer.classList.toggle('hidden', isOpen);
-    icon.textContent = isOpen ? '+' : '–';
   });
-});
+  mo.observe(document.body, { childList: true, subtree: true });
+
+  // начальная проверка header (чтобы sticky корректно отобразился сразу)
+  toggleHeaders();
+}
+
+// запуск
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+window.addEventListener('scroll', toggleHeaders);

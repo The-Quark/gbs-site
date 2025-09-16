@@ -5,7 +5,15 @@
     <a href="/" aria-label="GBS homepage" class="shrink-0">
       <img src="/src/assets/img/logo.svg" alt="GBS logo" class="my-3 h-10 w-auto" />
     </a>
-    <load src="src/layouts/headers/components/header-nav-list.html" />
-    <load src="src/layouts/headers/components/header-lang-toggle.html" />
+    <div class="block flex flex-row items-center justify-center gap-2 lg:hidden">
+      <load src="src/layouts/headers/components/header-lang-toggle.html" />
+      <load src="src/layouts/headers/components/header-nav-list.html" />
+    </div>
+    <div class="hidden lg:block">
+      <load src="src/layouts/headers/components/header-nav-list.html" />
+    </div>
+    <div class="hidden lg:block">
+      <load src="src/layouts/headers/components/header-lang-toggle.html" />
+    </div>
   </div>
 </header>

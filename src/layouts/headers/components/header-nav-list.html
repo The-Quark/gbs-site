@@ -1,7 +1,7 @@
 <nav aria-label="Main navigation" class="relative">
   <!-- Burger -->
   <div class="block lg:hidden">
-    <button type="button" id="menu-toggle">
+    <button type="button" data-menu-toggle>
       <span class="sr-only">Open main menu</span>
       <svg
         class="mt-[9px] ml-[5px] h-6 w-6"
@@ -20,27 +20,27 @@
 
   <!-- Menu desktop -->
   <div class="hidden lg:block">
-    <ul class="flex items-center justify-center space-x-12 font-medium uppercase">
+    <ul class="flex items-center justify-center space-x-10 font-medium uppercase">
       <li>
-        <a href="/index.html" class="hover:text-primary text-lg leading-7">Главная</a>
+        <a href="/index.html" class="hover:text-primary leading-base shrink-0 text-lg">Главная</a>
       </li>
       <li>
-        <a href="/src/pages/about-us/about-us.html" class="hover:text-primary text-lg leading-7"
+        <a href="/src/pages/about-us/about-us.html" class="hover:text-primary leading-base text-lg"
           >О нас</a
         >
       </li>
       <li>
-        <a href="/src/pages/devices/devices.html" class="hover:text-primary text-lg leading-7"
+        <a href="/src/pages/devices/devices.html" class="hover:text-primary leading-base text-lg"
           >Оборудование</a
         >
       </li>
       <li>
-        <a href="/src/pages/services/services.html" class="hover:text-primary text-lg leading-7"
+        <a href="/src/pages/services/services.html" class="hover:text-primary leading-base text-lg"
           >Услуги</a
         >
       </li>
       <li>
-        <a href="/src/pages/contacts/contacts.html" class="hover:text-primary text-lg leading-7"
+        <a href="/src/pages/contacts/contacts.html" class="hover:text-primary leading-base text-lg"
           >Контакты</a
         >
       </li>
@@ -74,9 +74,9 @@
   </div>
 
   <!--  Mobile menu-->
-  <div id="mobile-menu" class="absolute top-14 right-60 hidden w-full lg:hidden">
+  <div data-mobile-menu class="absolute top-14 right-60 z-50 hidden w-full lg:hidden">
     <ul
-      class="flex w-64 flex-col space-y-4 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 font-medium text-white uppercase backdrop-blur-xs"
+      class="flex w-64 flex-col space-y-4 rounded-2xl border border-white/20 bg-black p-4 font-medium text-white uppercase"
     >
       <li><a href="/index.html" class="hover:text-primary text-lg leading-7">Главная</a></li>
       <li>
