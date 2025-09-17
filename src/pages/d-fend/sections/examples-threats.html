@@ -1,87 +1,171 @@
-<section class="mb-40 flex h-[540px] flex-row gap-5" aria-labelledby="threats-title">
-  <div class="flex h-full flex-1 items-center">
-    <h1 id="threats-title" class="text-tt leading-h2 font-semibold">
-      <span class="text-primary">Инциденты с дронами</span> это постоянная угроза <br />
-      во всех сферах
-    </h1>
-  </div>
-  <div class="relative flex w-[572px] items-center justify-center">
-    <!-- Airport -->
-    <div
-      class="absolute top-9 left-0 z-2 flex w-[196px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
-    >
-      <img
-        src="/src/assets/img/pict/airport.jpg"
-        alt="Airport"
-        class="h-[92px] w-full rounded-lg object-cover"
-      />
-      <p class="self-start text-sm leading-5">Аэропорты и авиация</p>
+<section class="mb-20 lg:mb-40" aria-labelledby="threats-title">
+  <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+    <div class="flex h-full flex-1 items-center">
+      <h1 id="threats-title" class="text-tt leading-h2 font-semibold">
+        <span class="text-primary">Инциденты с дронами</span> это постоянная угроза <br />
+        во всех сферах
+      </h1>
     </div>
-    <!-- Ship -->
-    <div
-      class="absolute top-0 left-47 z-1 flex w-[208px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
-    >
-      <img
-        src="/src/assets/img/pict/maritime-safety.jpg"
-        alt="Maritime safety"
-        class="h-[100px] w-full rounded-lg object-cover"
-      />
-      <p class="self-start text-sm leading-5">Морская безопасность</p>
+    <div class="relative flex hidden h-[540px] w-[572px] items-center justify-center xl:block">
+      <!-- Airport -->
+      <div
+        class="absolute top-9 left-0 z-2 flex w-[196px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/airport.jpg"
+          alt="Airport"
+          class="h-[92px] w-full rounded-lg object-cover"
+        />
+        <p class="leading-medium self-start text-sm">Аэропорты и авиация</p>
+      </div>
+      <!-- Ship -->
+      <div
+        class="absolute top-0 left-47 z-1 flex w-[208px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/maritime-safety.jpg"
+          alt="Maritime safety"
+          class="h-[100px] w-full rounded-lg object-cover"
+        />
+        <p class="leading-medium self-start text-sm">Морская безопасность</p>
+      </div>
+      <!-- Stadium -->
+      <div
+        class="absolute top-26 right-4 z-1 flex w-[175px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/stadium.jpg"
+          alt="Stadium"
+          class="h-[94px] w-full rounded-lg object-cover"
+        />
+        <p class="leading-medium self-start text-sm">Стадионы и арены</p>
+      </div>
+      <!-- Special units -->
+      <div
+        class="absolute top-45 right-46 z-4 flex w-[230px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/special-units.jpg"
+          alt="Special units"
+          class="h-[111px] w-full rounded-lg object-cover"
+        />
+        <p class="leading-medium self-start text-sm">Военные и специальные подразделения</p>
+      </div>
+      <!-- Infrastructure -->
+      <div
+        class="absolute right-8 bottom-11 z-2 flex w-[186px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/infrastructure.jpg"
+          alt="Infrastructure"
+          class="h-[87px] w-full rounded-lg object-cover"
+        />
+        <p class="leading-medium self-start text-sm">Критически важная инфраструктура</p>
+      </div>
+      <!-- Prisons -->
+      <div
+        class="absolute right-52 bottom-0 z-1 flex w-[168px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/prisons.jpg"
+          alt="Infrastructure"
+          class="h-[90px] w-full rounded-lg object-cover"
+        />
+        <p class="leading-medium self-start text-sm">Тюрьмы</p>
+      </div>
+      <!-- Media -->
+      <div
+        class="absolute bottom-30 left-4 z-2 flex w-[152px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/media.jpg"
+          alt="Media"
+          class="h-[78px] w-full rounded-lg object-cover"
+        />
+        <p class="leading-medium self-start text-sm">СМИ</p>
+      </div>
     </div>
-    <!-- Stadium -->
+    <!-- Mobile view -->
     <div
-      class="absolute top-26 right-4 z-1 flex w-[175px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:mt-10 md:grid-cols-3 lg:grid-cols-2 xl:hidden"
     >
-      <img
-        src="/src/assets/img/pict/stadium.jpg"
-        alt="Stadium"
-        class="h-[94px] w-full rounded-lg object-cover"
-      />
-      <p class="self-start text-sm leading-5">Стадионы и арены</p>
-    </div>
-    <!-- Special units -->
-    <div
-      class="absolute top-45 right-46 z-4 flex w-[230px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
-    >
-      <img
-        src="/src/assets/img/pict/special-units.jpg"
-        alt="Special units"
-        class="h-[111px] w-full rounded-lg object-cover"
-      />
-      <p class="self-start text-sm leading-5">Военные и специальные подразделения</p>
-    </div>
-    <!-- Infrastructure -->
-    <div
-      class="absolute right-8 bottom-11 z-2 flex w-[186px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
-    >
-      <img
-        src="/src/assets/img/pict/infrastructure.jpg"
-        alt="Infrastructure"
-        class="h-[87px] w-full rounded-lg object-cover"
-      />
-      <p class="self-start text-sm leading-5">Критически важная инфраструктура</p>
-    </div>
-    <!-- Prisons -->
-    <div
-      class="absolute right-52 bottom-0 z-1 flex w-[168px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
-    >
-      <img
-        src="/src/assets/img/pict/prisons.jpg"
-        alt="Infrastructure"
-        class="h-[90px] w-full rounded-lg object-cover"
-      />
-      <p class="self-start text-sm leading-5">Тюрьмы</p>
-    </div>
-    <!-- Media -->
-    <div
-      class="absolute bottom-30 left-4 z-2 flex w-[152px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
-    >
-      <img
-        src="/src/assets/img/pict/media.jpg"
-        alt="Media"
-        class="h-[78px] w-full rounded-lg object-cover"
-      />
-      <p class="self-start text-sm leading-5">СМИ</p>
+      <!-- Airport -->
+      <div
+        class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/airport.jpg"
+          alt="Airport"
+          class="h-[220px] w-full rounded-lg object-cover sm:h-[200px] lg:h-[120px]"
+        />
+        <p class="leading-medium self-start text-sm">Аэропорты и авиация</p>
+      </div>
+      <!-- Ship -->
+      <div
+        class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/maritime-safety.jpg"
+          alt="Maritime safety"
+          class="h-[220px] w-full rounded-lg object-cover sm:h-[200px] lg:h-[120px]"
+        />
+        <p class="leading-medium self-start text-sm">Морская безопасность</p>
+      </div>
+      <!-- Stadium -->
+      <div
+        class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/stadium.jpg"
+          alt="Stadium"
+          class="h-[220px] w-full rounded-lg object-cover sm:h-[200px] lg:h-[120px]"
+        />
+        <p class="leading-medium self-start text-sm">Стадионы и арены</p>
+      </div>
+      <!-- Special units -->
+      <div
+        class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/special-units.jpg"
+          alt="Special units"
+          class="h-[220px] w-full rounded-lg object-cover sm:h-[200px] lg:h-[120px]"
+        />
+        <p class="leading-medium self-start text-sm">Военные и специальные подразделения</p>
+      </div>
+      <!-- Infrastructure -->
+      <div
+        class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/infrastructure.jpg"
+          alt="Infrastructure"
+          class="h-[220px] w-full rounded-lg object-cover sm:h-[200px] lg:h-[120px]"
+        />
+        <p class="leading-medium self-start text-sm">Критически важная инфраструктура</p>
+      </div>
+      <!-- Prisons -->
+      <div
+        class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/prisons.jpg"
+          alt="Infrastructure"
+          class="h-[220px] w-full rounded-lg object-cover sm:h-[200px] lg:h-[120px]"
+        />
+        <p class="leading-medium self-start text-sm">Тюрьмы</p>
+      </div>
+      <!-- Media -->
+      <div
+        class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-4 backdrop-blur-xs"
+      >
+        <img
+          src="/src/assets/img/pict/media.jpg"
+          alt="Media"
+          class="h-[220px] w-full rounded-lg object-cover sm:h-[200px] lg:h-[120px]"
+        />
+        <p class="leading-medium self-start text-sm">СМИ</p>
+      </div>
     </div>
   </div>
 </section>
