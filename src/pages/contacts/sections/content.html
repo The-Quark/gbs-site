@@ -1,11 +1,11 @@
-<section class="mt-22 mb-40" aria-labelledby="contacts-title-section">
+<section class="mt-11 mb-20 lg:mt-22 lg:mb-40" aria-labelledby="contacts-title-section">
   <h2 id="contacts-title-section" class="sr-only">Контакты</h2>
   <div class="flex w-full flex-col items-center justify-center gap-30">
-    <address class="grid grid-cols-3 gap-x-19 gap-y-30 text-center not-italic">
+    <address
+      class="grid w-full grid-cols-1 gap-x-10 gap-y-14 text-center not-italic sm:grid-cols-2 md:grid-cols-3 lg:gap-x-19 lg:gap-y-30"
+    >
       <!-- Email -->
-      <div
-        class="group relative flex h-[315px] w-[315px] cursor-pointer items-center justify-center"
-      >
+      <div class="group relative flex h-[315px] cursor-pointer items-center justify-center">
         <div class="absolute inset-0 z-0 flex items-center justify-center">
           <img
             src="/src/assets/img/icon/mail.svg"
@@ -21,9 +21,7 @@
         </a>
       </div>
       <!-- Phone -->
-      <div
-        class="group relative flex h-[315px] w-[315px] cursor-pointer items-center justify-center"
-      >
+      <div class="group relative flex h-[315px] cursor-pointer items-center justify-center">
         <div class="absolute inset-0 z-0 flex items-center justify-center">
           <img
             src="/src/assets/img/icon/phone.svg"
@@ -39,9 +37,7 @@
         </a>
       </div>
       <!-- Address -->
-      <div
-        class="group relative flex h-[315px] w-[315px] cursor-pointer items-center justify-center"
-      >
+      <div class="group relative flex h-[315px] cursor-pointer items-center justify-center">
         <div class="absolute inset-0 z-0 mb-8 flex items-center justify-center">
           <img
             src="/src/assets/img/icon/map.svg"
@@ -55,8 +51,10 @@
       </div>
     </address>
 
-    <ul class="mt-10 grid grid-cols-3 gap-x-19 gap-y-30 text-center">
-      <li class="w-[315px]">
+    <ul
+      class="grid w-full grid-cols-1 gap-x-19 gap-y-30 text-center sm:grid-cols-2 md:grid-cols-3 lg:mt-10"
+    >
+      <li>
         <a
           href="https://www.facebook.com/"
           target="_blank"
@@ -66,7 +64,7 @@
           Facebook
         </a>
       </li>
-      <li class="w-[315px]">
+      <li>
         <a
           href="https://www.instagram.com/"
           target="_blank"
@@ -76,7 +74,7 @@
           Instagram
         </a>
       </li>
-      <li class="w-[315px]">
+      <li>
         <a
           href="https://wa.me/77772401265"
           target="_blank"
