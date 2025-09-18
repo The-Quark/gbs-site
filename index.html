@@ -6,13 +6,40 @@
     <title>Global Business Solutions</title>
   </head>
   <body>
-    <div class="container">
-      <load src="src/layouts/headers/main-header.html" />
-      <load src="src/layouts/headers/sticky-header.html" />
-      <load src="src/pages/main/main.html" />
-      <div id="app"></div>
-      <load src="src/layouts/footer.html" />
-      <script type="module" src="/src/main.js"></script>
+    <div class="relative z-0 mx-auto overflow-hidden">
+      <img
+        src="/src/assets/img/artefact/art-element-1.svg"
+        alt="Artefact Element"
+        class="absolute -top-[765px] -right-[250px]"
+      />
+      <img
+        src="/src/assets/img/artefact/art-element-2.svg"
+        alt="Artefact Element 2"
+        class="absolute top-[150px] -left-[650px]"
+      />
+      <img
+        src="/src/assets/img/artefact/art-element-3.svg"
+        alt="Artefact Element 3"
+        class="absolute top-[1100px] -left-[300px]"
+      />
+      <img
+        src="/src/assets/img/artefact/art-element-4.svg"
+        alt="Artefact Element 4"
+        class="absolute top-[1600px] -right-[300px]"
+      />
+      <img
+        src="/src/assets/img/artefact/art-element-5.svg"
+        alt="Artefact Element 5"
+        class="absolute top-[3050px]"
+      />
+      <div class="z-2 container">
+        <load src="src/layouts/headers/main-header.html" />
+        <load src="src/layouts/headers/sticky-header.html" />
+        <load src="src/pages/main/main.html" />
+        <div id="app"></div>
+        <load src="src/layouts/footer.html" />
+        <script type="module" src="/src/main.js"></script>
+      </div>
     </div>
   </body>
 </html>
