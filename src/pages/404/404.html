@@ -3,38 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 Page</title>
+    <title>404 Not Found Page</title>
   </head>
   <body>
-    <div
-      class="container max-h-[1252px] w-[1600px] bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)),url('/public/images/wallpaper-satellite.jpg')] bg-cover bg-[center_left_91%]"
-    >
-      <load src="/src/layouts/headers/main-header.html" />
-      <main class="relative h-[822px]">
-        <img
-          src="/src/assets/img/icon/four.svg"
-          alt="Four"
-          class="absolute top-[133px] left-[150px] z-2 h-[412px] w-[251px] object-cover"
-        />
-        <img
-          src="/src/assets/img/pict/two-satellite.png"
-          alt="Satellite"
-          class="absolute -top-[104px] -left-[10px] z-3 h-[1094px] w-[1562px] object-cover"
-        />
-        <img
-          src="/src/assets/img/icon/four.svg"
-          alt="Four"
-          class="absolute top-[114px] left-[873px] z-4 h-[412px] w-[251px] object-cover"
-        />
-        <div
-          class="absolute bottom-5 left-[335px] z-6 flex w-[315px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-5 text-center backdrop-blur-xs"
-        >
-          <h3 class="text-lg leading-7 font-bold">Страница не найдена</h3>
-          <p class="text-base leading-6">Мы не смогли найти то, что вы искали.</p>
-          <a href="/index.html" class="button mt-2 w-full">Вернуться на главную</a>
+    <div class="2xl:hidden">
+      <div class="relative flex h-full w-full flex-col items-center justify-center overflow-hidden">
+        <div class="container">
+          <load src="/src/layouts/headers/main-header.html" />
+          <main
+            class="flex h-full w-full items-center justify-center py-44 sm:py-32 md:py-28 xl:py-32"
+          >
+            <div
+              class="flex w-[315px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-5 text-center backdrop-blur-xs sm:w-[450px] md:w-[600px] lg:w-[800px]"
+            >
+              <h1
+                class="bg-[url('/public/images/wallpaper-404.jpg')] bg-cover bg-clip-text bg-center text-[160px] leading-none font-extrabold text-transparent select-none sm:text-[220px] md:text-[260px] lg:text-[300px]"
+              >
+                404
+              </h1>
+              <h3 class="text-lg leading-7 font-bold">Страница не найдена</h3>
+              <p class="text-base leading-6">Мы не смогли найти то, что вы искали.</p>
+              <a href="/index.html" class="button mt-2 w-[260px]">Вернуться на главную</a>
+            </div>
+          </main>
+          <load src="/src/layouts/footer.html" />
         </div>
-      </main>
-      <load src="/src/layouts/footer.html" />
+      </div>
+    </div>
+    <div class="hidden 2xl:block">
+      <div
+        class="container bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)),url('/public/images/wallpaper-404.jpg')] bg-cover bg-[center_left_91%]"
+      >
+        <load src="/src/layouts/headers/main-header.html" />
+        <main class="relative h-[822px]">
+          <div
+            class="absolute bottom-5 left-[335px] z-6 flex w-[315px] flex-col items-center justify-center gap-2 rounded-2xl border border-white/20 bg-[rgba(63,63,63,0.25)] p-5 text-center backdrop-blur-xs"
+          >
+            <h3 class="text-lg leading-7 font-bold">Страница не найдена</h3>
+            <p class="text-base leading-6">Мы не смогли найти то, что вы искали.</p>
+            <a href="/index.html" class="button mt-2 w-full">Вернуться на главную</a>
+          </div>
+        </main>
+        <load src="/src/layouts/footer.html" />
+      </div>
     </div>
   </body>
   <script type="module" src="/src/main.js"></script>
