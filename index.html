@@ -6,7 +6,14 @@
     <title>Global Business Solutions</title>
   </head>
   <body>
+    <script src="/src/js/libs/jsband-min.js"></script>
+    <script src="/src/js/tube-min.js"></script>
     <div class="relative z-0 mx-auto overflow-hidden">
+      <div
+        id="tube_container"
+        style="position: fixed; width: 100%; height: 100%; z-index: 0; opacity: 30%"
+      ></div>
+
       <img
         src="/src/assets/img/artefact/art-element-710-445-500.svg"
         alt="Artefact Element-710-445-500"
@@ -40,6 +47,70 @@
         <load src="src/layouts/footer.html" />
       </div>
     </div>
+    <script type="text/javascript">
+      var tube = new TubeAnimation('tube_container', {
+        //Main settings
+        TUBE_SIZE: 200,
+        TUBE_WIDTH: 30,
+        TUBE_DISTANCE: 450,
+        PERSPECTIVE_DISTORTION: 0.8,
+        TUBE_TORSION: 0.3,
+        TUBE_STRETCH: 400,
+        ROTATION_SPEED: 2, //rotation speed in abstract units
+        INITIAL_ROTATION: 0, //initial rotation in degrees
+        INITIAL_ROTATION_DIRECTION: 4.5, //initial spin direction in hours
+        DOT_COLOR: 'rgb(190, 220, 240)',
+        DOT_SIZE: 1,
+        DETALIZATION: 209,
+        MESH_DISTRIBUTION: 0,
+        MESH_RATIO: 18.103,
+        OFFSET_X: 0, //offset in pixels
+        OFFSET_Y: 0, //offset in pixels
+        PERCENTAGE_OFFSET_X: 0, //offset in percentages
+        PERCENTAGE_OFFSET_Y: 0, //offset in percentages
+
+        //Responsivity settings
+        AUTO_SCALE: false,
+        VIEWPORT_WIDTH: 1000,
+        VIEWPORT_HEIGHT: 1000,
+
+        //Mouse settings
+        MOUSE_DISTANCE_MIN: 20,
+        MOUSE_DISTANCE_MAX: 400,
+        MOUSE_SENSITIVITY: 0.1,
+        INERTIAL_TIME: 2,
+
+        //Main morphing settings
+        USE_MAIN_MORPHING: true,
+        MAIN_MORPHING_AUTOPLAY: true,
+        MAIN_MORPHING_DURATION: 1.5,
+        MAIN_MORPHING_DELAY: 2,
+        MAIN_MORPHING_TRANSITION_TYPE: 'cubic',
+        MAIN_MORPHING_STAGES: [
+          { DOT_COLOR: 'rgb(190, 220, 240)' },
+          { DOT_COLOR: 'rgba(255, 180, 207, 1)' },
+          { DOT_COLOR: 'rgba(210, 190, 252, 1)' },
+          { DOT_COLOR: 'rgba(138, 230, 200, 1)' },
+          { DOT_COLOR: 'rgba(185, 235, 69, 1)' },
+          { DOT_COLOR: 'rgba(255, 190, 0, 1)' },
+        ],
+
+        //Surface distortion settings
+        SURFACE_INITIAL_DISTORTION: {
+          wave1: { amplitude: 19.216, frequency: 4, phase: 1.201 },
+          wave2: { amplitude: 0, frequency: 3, phase: 0 },
+          wave3: { amplitude: 15, frequency: 2, phase: 0 },
+        },
+        USE_SURFACE_MORPHING: false,
+        USE_SURFACE_MOTION: true,
+        USE_SURFACE_SWING: false,
+
+        //Surface motion settings
+        WAVE_1_MOTION_SPEED: 1.5,
+        //WAVE_2_MOTION_SPEED: 1,
+        WAVE_3_MOTION_SPEED: -1,
+      });
+    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
