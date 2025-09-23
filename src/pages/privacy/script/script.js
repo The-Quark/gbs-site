@@ -1,27 +1,41 @@
-import { menuItems } from './data.js';
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const hash = anchor.getAttribute('href');
+    const target = document.querySelector(hash);
+    if (!target) return;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const menu = document.getElementById('privacy-menu');
-  const contentBox = document.getElementById('privacy-content');
+    const rect = target.getBoundingClientRect();
+    const targetHeight = rect.height;
+    const viewportHeight = window.innerHeight;
 
-  menu.innerHTML = '';
+    let desiredTop = window.scrollY + rect.top - (viewportHeight - targetHeight) / 2;
 
-  menuItems.forEach((item, index) => {
-    const li = document.createElement('li');
-    li.textContent = item.title;
-    li.className = 'hover:text-primary cursor-pointer';
+    const maxScroll = document.documentElement.scrollHeight - viewportHeight;
+    if (desiredTop < 0) desiredTop = 0;
+    if (desiredTop > maxScroll) desiredTop = maxScroll;
 
-    li.addEventListener('click', () => {
-      [...menu.children].forEach((i) => i.classList.remove('text-primary'));
-      li.classList.add('text-primary');
-      contentBox.innerHTML = item.description;
-    });
+    window.scrollTo({ top: Math.round(desiredTop), behavior: 'smooth' });
 
-    if (index === 0) {
-      li.classList.add('text-primary');
-      contentBox.innerHTML = item.description;
-    }
+    history.pushState(null, '', hash);
 
-    menu.appendChild(li);
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+
+    // 👉 сбрасываем у всех ссылок стили активного состояния
+    document
+      .querySelectorAll('nav a')
+      .forEach((a) => a.classList.remove('text-primary', 'font-bold'));
+
+    // 👉 сбрасываем у всех параграфов стили активного состояния
+    document
+      .querySelectorAll('[id]')
+      .forEach((p) => p.classList.remove('text-primary', 'font-bold'));
+
+    // 👉 выделяем активную ссылку
+    anchor.classList.add('text-primary', 'font-bold');
+
+    // 👉 выделяем активный параграф
+    target.classList.add('text-primary', 'font-bold');
   });
 });
