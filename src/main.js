@@ -115,11 +115,12 @@ function init() {
     const btn = item.querySelector('button');
     const answer = item.querySelector('.faq-answer');
     const icon = item.querySelector('.icon');
-    if (!btn || !answer) return;
+    if (!btn || !answer || !icon) return;
+
     btn.addEventListener('click', () => {
       const isOpen = !answer.classList.contains('hidden');
       answer.classList.toggle('hidden', isOpen);
-      if (icon) icon.textContent = isOpen ? '+' : '–';
+      icon.src = isOpen ? '/src/assets/img/icon/plus.svg' : '/src/assets/img/icon/minus.svg';
     });
   });
 
