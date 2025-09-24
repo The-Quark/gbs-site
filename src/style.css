@@ -53,6 +53,10 @@
   --leading-sm: 1.7;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   font-family: 'TT Supermolot Neue', sans-serif;
@@ -60,7 +64,6 @@ body {
   color: var(--color-white);
   font-weight: 400;
   margin: 0;
-  scroll-behavior: smooth;
 }
 
 .container {

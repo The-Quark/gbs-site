@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!container) return;
 
   const activeClasses = 'h-[520px] w-[720px] cursor-default';
-  const inactiveClasses = 'h-[520px] w-[142px] cursor-pointer';
+  const inactiveClasses =
+    'h-[520px] w-[142px] cursor-pointer hover:blur-[1px] hover:brightness-70 transition-all duration-500 ease-in-out';
   const activeImgClasses = 'mask-b-from-80%';
-  const inactiveImgClasses = 'brightness-75';
+  const inactiveImgClasses = 'brightness-60';
 
   const cards = container.querySelectorAll('div.relative');
 
