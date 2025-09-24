@@ -7,8 +7,10 @@ function toggleHeaders() {
   if (!mainHeader || !stickyHeader) return;
   if (window.scrollY > mainHeader.offsetHeight) {
     stickyHeader.classList.remove('hidden');
+    closeAllLangMenus();
   } else {
     stickyHeader.classList.add('hidden');
+    closeAllLangMenus();
   }
 }
 
