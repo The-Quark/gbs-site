@@ -2,6 +2,7 @@ import './style.css';
 
 const mainHeader = document.getElementById('main-header');
 const stickyHeader = document.getElementById('sticky-header');
+const langMenu = document.querySelector('[data-lang-menu]');
 
 function toggleHeaders() {
   if (!mainHeader || !stickyHeader) return;
@@ -32,25 +33,26 @@ function initLangToggles(root = document) {
   roots.forEach((r) => {
     if (r.dataset.langInit) return;
     const toggle = r.querySelector('[data-lang-toggle]');
-    const menu = r.querySelector('[data-lang-menu]');
-    if (!toggle || !menu) return;
+    if (!toggle) return;
 
     r.dataset.langInit = '1';
     toggle.setAttribute('aria-expanded', 'false');
 
     toggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isHidden = menu.classList.toggle('hidden');
+
+      const isHidden = langMenu.classList.toggle('hidden');
       toggle.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
 
       if (!isHidden) {
-        // при открытии языкового меню — закрываем все mobile menus (бургер)
         closeAllMobileMenus();
+
+        // позиционируем меню относительно кнопки
+        const rect = toggle.getBoundingClientRect();
+        langMenu.style.top = rect.bottom + 8 + 'px';
+        langMenu.style.left = rect.right - langMenu.offsetWidth + 'px';
       }
     });
-
-    // чтобы клик внутри меню не закрывал его
-    menu.addEventListener('click', (e) => e.stopPropagation());
   });
 }
 
