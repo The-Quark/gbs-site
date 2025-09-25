@@ -52,17 +52,29 @@
         alt="Artefact Element-500-500-500"
         class="animate-infinite animate-ease-in animate-duration-[3000ms] animate-delay-[2000ms] absolute top-[7100px] -right-[400px] z-0 animate-pulse"
       />
-      <div class="z-10 container">
-        <load src="/src/layouts/headers/main-header.html" />
-        <load src="/src/layouts/headers/sticky-header.html" />
+      <div class="relative z-10">
+        <div class="container">
+          <load src="/src/layouts/headers/main-header.html" />
+          <load src="/src/layouts/headers/sticky-header.html" />
+        </div>
         <main>
-          <load src="/src/pages/about-us/sections/hero.html" />
-          <load src="/src/pages/components/advantages.html" />
-          <load src="/src/pages/about-us/sections/histogram.html" />
-          <load src="/src/pages/about-us/sections/asked-questions.html" />
-          <load src="/src/pages/components/form.html" />
+          <div class="container">
+            <load src="/src/pages/about-us/sections/hero.html" />
+            <load src="/src/pages/components/advantages.html" />
+            <load src="/src/pages/about-us/sections/histogram.html" />
+            <load src="/src/pages/about-us/sections/asked-questions.html" />
+          </div>
+          <div class="bg-black">
+            <div class="container">
+              <load src="/src/pages/components/form.html" />
+            </div>
+          </div>
         </main>
-        <load src="/src/layouts/footer.html" />
+        <div class="bg-black">
+          <div class="container">
+            <load src="/src/layouts/footer.html" />
+          </div>
+        </div>
       </div>
     </div>
     <script type="module" src="/src/main.js"></script>
