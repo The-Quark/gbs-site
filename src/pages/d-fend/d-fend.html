@@ -52,20 +52,32 @@
         alt="Artefact Element-500-500-500"
         class="animate-infinite animate-ease-in animate-duration-[3000ms] animate-delay-[2000ms] absolute top-[5000px] -left-[400px] z-0 animate-pulse"
       />
-      <div class="container">
-        <load src="/src/layouts/headers/main-header.html" />
-        <load src="/src/layouts/headers/sticky-header.html" />
+      <div class="relative z-10">
+        <div class="container">
+          <load src="/src/layouts/headers/main-header.html" />
+          <load src="/src/layouts/headers/sticky-header.html" />
+        </div>
         <main>
-          <load src="/src/pages/d-fend/sections/hero.html" />
-          <load src="/src/pages/d-fend/sections/intercept-drone.html" />
-          <load src="/src/pages/d-fend/sections/statistics.html" />
-          <load src="/src/pages/d-fend/sections/examples-threats.html" />
-          <load src="/src/pages/d-fend/sections/new-approach.html" />
-          <load src="/src/pages/d-fend/sections/control-drone.html" />
-          <load src="/src/pages/d-fend/sections/format-images.html" />
-          <load src="/src/pages/components/form.html" />
+          <div class="container">
+            <load src="/src/pages/d-fend/sections/hero.html" />
+            <load src="/src/pages/d-fend/sections/intercept-drone.html" />
+            <load src="/src/pages/d-fend/sections/statistics.html" />
+            <load src="/src/pages/d-fend/sections/examples-threats.html" />
+            <load src="/src/pages/d-fend/sections/new-approach.html" />
+            <load src="/src/pages/d-fend/sections/control-drone.html" />
+            <load src="/src/pages/d-fend/sections/format-images.html" />
+          </div>
+          <div class="bg-black">
+            <div class="container">
+              <load src="/src/pages/components/form.html" />
+            </div>
+          </div>
         </main>
-        <load src="/src/layouts/footer.html" />
+        <div class="bg-black">
+          <div class="container">
+            <load src="/src/layouts/footer.html" />
+          </div>
+        </div>
       </div>
     </div>
     <script type="module" src="./script/script.js"></script>
