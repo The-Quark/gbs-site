@@ -40,12 +40,18 @@
         alt="Artefact Element-1440-443-360"
         class="animate-infinite animate-ease-in animate-duration-[3000ms] animate-delay-[2000ms] absolute top-[3050px] z-0 animate-pulse"
       />
-      <div class="container">
-        <load src="src/layouts/headers/main-header.html" />
-        <load src="src/layouts/headers/sticky-header.html" />
+      <div class="relative z-10">
+        <div class="container">
+          <load src="src/layouts/headers/main-header.html" />
+          <load src="src/layouts/headers/sticky-header.html" />
+        </div>
         <load src="src/pages/main/main.html" />
         <div id="app"></div>
-        <load src="src/layouts/footer.html" />
+        <div class="bg-black">
+          <div class="container">
+            <load src="src/layouts/footer.html" />
+          </div>
+        </div>
       </div>
     </div>
     <script type="text/javascript">
